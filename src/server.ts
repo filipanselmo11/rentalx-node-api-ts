@@ -1,9 +1,10 @@
-import express from "express";
+import express from 'express';
+import categoriasRoute from './routes/categorias.routes';
 
 const app = express();
 
-app.get("/", (req, res) => {
-    return res.json({ message: "Hello"});
-})
+app.use(express.json());
 
-app.listen(3333, () => console.log("Servidor Rodando"));
+app.use('/categorias', categoriasRoute);
+
+app.listen(3333, () => console.log('Servidor Rodando'));
