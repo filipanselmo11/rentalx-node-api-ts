@@ -1,12 +1,10 @@
 import Categoria from '../model/Categoria';
+import {
+  ICategoriaRepository,
+  ICriarCategoriaDTO,
+} from './ICategoriasRepository';
 
-// DTO => data transfer object
-interface ICriarCategoriaDTO {
-  nome: string;
-  descricao: string;
-}
-
-class CategoriasRepository {
+class CategoriasRepository implements ICategoriaRepository {
   private categorias: Categoria[]; // banco de dados
 
   constructor() {
