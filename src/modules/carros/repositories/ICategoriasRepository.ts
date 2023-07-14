@@ -8,6 +8,6 @@ export interface ICriarCategoriaDTO {
 
 export interface ICategoriaRepository {
   criar({ nome, descricao }: ICriarCategoriaDTO): void;
-  listar(): Categoria[];
+  listar(): Categoria;
   procurarPorNome(nome: string): Categoria;
 }
