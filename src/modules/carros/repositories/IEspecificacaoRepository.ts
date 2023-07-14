@@ -7,5 +7,6 @@ export interface ICriarEspecificacaoDTO {
 
 export interface IEspecificacaoRepository {
   criar({ descricao, nome }: ICriarEspecificacaoDTO): void;
+  listar(): Especificaco[];
   procurarPorNome(nome: string): Especificaco;
 }

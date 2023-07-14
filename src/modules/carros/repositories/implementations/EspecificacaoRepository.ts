@@ -1,8 +1,8 @@
-import Especificaco from '../model/Especificacao';
+import Especificaco from '../../model/Especificacao';
 import {
   ICriarEspecificacaoDTO,
   IEspecificacaoRepository,
-} from './IEspecificacaoRepository';
+} from '../IEspecificacaoRepository';
 
 export default class EspecificacaoRepository
   implements IEspecificacaoRepository

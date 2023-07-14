@@ -1,13 +1,11 @@
-import { IEspecificacaoRepository } from '../repositories/IEspecificacaoRepository';
+import { IEspecificacaoRepository } from '../../repositories/IEspecificacaoRepository';
 
 interface IRequest {
   nome: string;
   descricao: string;
 }
 
-export default class CriarEspecificacaoService
-  implements IEspecificacaoRepository
-{
+export default class CriarEspecificacaoUseCase {
   private especificacaoRepository: IEspecificacaoRepository;
 
   constructor(especificacaoRepository: IEspecificacaoRepository) {

@@ -1,14 +1,26 @@
-import Categoria from '../model/Categoria';
+import Categoria from '../../model/Categoria';
 import {
   ICategoriaRepository,
   ICriarCategoriaDTO,
-} from './ICategoriasRepository';
+} from '../ICategoriasRepository';
+
+// Design pattern Singleton
 
 class CategoriasRepository implements ICategoriaRepository {
   private categorias: Categoria[]; // banco de dados
 
-  constructor() {
+  private static INSTANCE: CategoriasRepository;
+
+  private constructor() {
     this.categorias = [];
+  }
+
+  public static getInstance(): CategoriasRepository {
+    if (!CategoriasRepository.INSTANCE) {
+      CategoriasRepository.INSTANCE = new CategoriasRepository();
+    }
+
+    return CategoriasRepository.INSTANCE;
   }
 
   criar({ nome, descricao }: ICriarCategoriaDTO): void {
